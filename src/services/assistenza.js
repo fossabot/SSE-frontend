@@ -1,9 +1,10 @@
+import { API_BASE } from "../api";
 import Cookies from "js-cookie";
 
 const addSegnalazione = async (newSegnalazione) => {
   try {
     const response = await fetch(
-      "http://localhost:4000/api/avvisi/aggiungi-segnalazione",
+      `${API_BASE}/api/avvisi/aggiungi-segnalazione`,
       {
         method: "POST",
         headers: {

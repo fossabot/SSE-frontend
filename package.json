@@ -6,7 +6,7 @@
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@fontsource/fredoka": "^5.0.8",
-    "@fontsource/fredoka-one": "^5.0.5",
+    "@fontsource/fredoka-one": "4.5.0",
     "@fontsource/opendyslexic": "^5.0.7",
     "@mui/icons-material": "^5.15.4",
     "@mui/material": "^5.15.4",

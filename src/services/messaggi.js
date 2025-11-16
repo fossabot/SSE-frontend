@@ -1,9 +1,10 @@
+import { API_BASE } from "../api";
 import Cookies from "js-cookie";
 
 const addMessage = async (newMessageData) => {
   try {
     const response = await fetch(
-      "http://localhost:4000/api/chat/aggiungi-messaggio",
+      `${API_BASE}/api/chat/aggiungi-messaggio`,
       {
         method: "POST",
         headers: {
@@ -31,7 +32,7 @@ const getMessagesByUsersId = async (userId1, userId2) => {
       destinatario: userId2,
     };
     const response = await fetch(
-      `http://localhost:4000/api/chat/visualizza-chat`,
+      `${API_BASE}/api/chat/visualizza-chat`,
       {
         method: "POST",
         headers: {

@@ -1,9 +1,10 @@
+import { API_BASE } from "../api";
 import Cookies from "js-cookie";
 
 const getUserByEmailAndPassword = async (email, password) => {
   try {
     const response = await fetch(
-      "http://localhost:4000/api/autenticazione/login",
+      `${API_BASE}/api/autenticazione/login`,
       {
         method: "POST",
         headers: {
@@ -22,7 +23,7 @@ const getUserByEmailAndPassword = async (email, password) => {
 const getUserById = async (id) => {
   try {
     const response = await fetch(
-      `http://localhost:4000/api/area-personale/profilo-utente?id=${id}`,
+      `${API_BASE}/api/area-personale/profilo-utente?id=${id}`,
       {
         method: "GET",
       }
@@ -40,7 +41,7 @@ const getUserById = async (id) => {
 const addUser = async (newUserData) => {
   try {
     const response = await fetch(
-      "http://localhost:4000/api/autenticazione/signup",
+      `${API_BASE}/api/autenticazione/signup`,
       {
         method: "POST",
         headers: {
@@ -63,7 +64,7 @@ const addUser = async (newUserData) => {
 const modifyUser = async (newUserData) => {
   try {
     const response = await fetch(
-      "http://localhost:4000/api/area-personale/modifica-dati-utente",
+      `${API_BASE}/api/area-personale/modifica-dati-utente`,
       {
         method: "POST",
         headers: {

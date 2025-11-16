@@ -1,9 +1,10 @@
+import { API_BASE } from "../api";
 import Cookies from "js-cookie";
 
 const getUserValutationsByValutatoId = async (idValutato) => {
   try {
     const response = await fetch(
-      `http://localhost:4000/api/valutazione/visualizza-valutazioni-utente?valutato=${idValutato}`,
+      `${API_BASE}/api/valutazione/visualizza-valutazioni-utente?valutato=${idValutato}`,
       {
         method: "GET",
       }
@@ -21,7 +22,7 @@ const getUserValutationsByValutatoId = async (idValutato) => {
 const addUserValutation = async (newValutationData) => {
   try {
     const response = await fetch(
-      "http://localhost:4000/api/valutazione/aggiungi-valutazione-utente",
+      `${API_BASE}/api/valutazione/aggiungi-valutazione-utente`,
       {
         method: "POST",
         headers: {

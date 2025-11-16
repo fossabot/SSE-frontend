@@ -1,9 +1,10 @@
+import { API_BASE } from "../api";
 import Cookies from "js-cookie";
 
 const getRentalById = async (rentalId) => {
   try {
     const response = await fetch(
-      `http://localhost:4000/api/noleggio/visualizza-noleggio?idNoleggio=${rentalId}`,
+      `${API_BASE}/api/noleggio/visualizza-noleggio?idNoleggio=${rentalId}`,
       {
         method: "GET",
         headers: {
@@ -24,7 +25,7 @@ const getRentalById = async (rentalId) => {
 const getRentalsByNoleggiante = async (noleggianteId) => {
   try {
     const response = await fetch(
-      `http://localhost:4000/api/noleggio/noleggiante?idUtente=${noleggianteId}`,
+      `${API_BASE}/api/noleggio/noleggiante?idUtente=${noleggianteId}`,
       {
         method: "GET",
         headers: {
@@ -42,7 +43,7 @@ const getRentalsByNoleggiante = async (noleggianteId) => {
 const getRentalsByNoleggiatore = async (noleggiatoreId) => {
   try {
     const response = await fetch(
-      `http://localhost:4000/api/noleggio/noleggiatore?idUtente=${noleggiatoreId}`,
+      `${API_BASE}/api/noleggio/noleggiatore?idUtente=${noleggiatoreId}`,
       {
         method: "GET",
         headers: {
@@ -60,7 +61,7 @@ const getRentalsByNoleggiatore = async (noleggiatoreId) => {
 const getRentalsRequestsByNoleggiante = async (noleggianteId) => {
   try {
     const response = await fetch(
-      `http://localhost:4000/api/noleggio/richieste/noleggiante?idUtente=${noleggianteId}`,
+      `${API_BASE}/api/noleggio/richieste/noleggiante?idUtente=${noleggianteId}`,
       {
         method: "GET",
         headers: {
@@ -78,7 +79,7 @@ const getRentalsRequestsByNoleggiante = async (noleggianteId) => {
 const getRentalsRequestsByNoleggiatore = async (noleggiatoreId) => {
   try {
     const response = await fetch(
-      `http://localhost:4000/api/noleggio/richieste/noleggiatore?idUtente=${noleggiatoreId}`,
+      `${API_BASE}/api/noleggio/richieste/noleggiatore?idUtente=${noleggiatoreId}`,
       {
         method: "GET",
         headers: {
@@ -96,7 +97,7 @@ const getRentalsRequestsByNoleggiatore = async (noleggiatoreId) => {
 const addRental = async (newRental) => {
   try {
     const response = await fetch(
-      "http://localhost:4000/api/noleggio/aggiungi-noleggio",
+      `${API_BASE}/api/noleggio/aggiungi-noleggio`,
       {
         method: "POST",
         headers: {
@@ -117,7 +118,7 @@ const addRental = async (newRental) => {
 const modifyRental = async (modifiedRental) => {
   try {
     const response = await fetch(
-      "http://localhost:4000/api/noleggio/salva-noleggio",
+      `${API_BASE}/api/noleggio/salva-noleggio`,
       {
         method: "POST",
         headers: {

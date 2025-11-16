@@ -1,9 +1,10 @@
+import { API_BASE } from "../api";
 import axios from "axios";
 import Cookies from "js-cookie";
 
 const getAllAds = async () => {
   try {
-    const response = await fetch(`http://localhost:4000/api/ricerca/all`, {
+    const response = await fetch(`${API_BASE}/api/ricerca/all`, {
       method: "GET",
     });
 
@@ -15,7 +16,7 @@ const getAllAds = async () => {
 
 const getPremiumAds = async () => {
   try {
-    const response = await fetch(`http://localhost:4000/api/ricerca/premium`, {
+    const response = await fetch(`${API_BASE}/api/ricerca/premium`, {
       method: "GET",
     });
 
@@ -28,7 +29,7 @@ const getPremiumAds = async () => {
 const getAdById = async (id) => {
   try {
     const response = await fetch(
-      `http://localhost:4000/api/annuncio/visualizza-annuncio?id=${id}`,
+      `${API_BASE}/api/annuncio/visualizza-annuncio?id=${id}`,
       {
         method: "GET",
       }
@@ -44,7 +45,7 @@ const getAdById = async (id) => {
 const getAdsByUserId = async (id) => {
   try {
     const response = await fetch(
-      `http://localhost:4000/api/annuncio/visualizza-annunci-utente?id=${id}`,
+      `${API_BASE}/api/annuncio/visualizza-annunci-utente?id=${id}`,
       {
         method: "GET",
       }
@@ -65,7 +66,7 @@ const addAd = async (newAdData, image) => {
     }
     formData.append("image", image);
     const response = await axios.post(
-      "http://localhost:4000/api/annuncio/aggiungi-annuncio",
+      `${API_BASE}/api/annuncio/aggiungi-annuncio`,
       formData,
       {
         headers: {
@@ -88,7 +89,7 @@ const addAd = async (newAdData, image) => {
 const deleteAdById = async (id) => {
   try {
     const response = await fetch(
-      `http://localhost:4000/api/annuncio/delete-annuncio?id=${id}`,
+      `${API_BASE}/api/annuncio/delete-annuncio?id=${id}`,
       {
         method: "GET",
         headers: {
@@ -114,7 +115,7 @@ const modifyAd = async (modifiedAd, image) => {
 
     console.log(formData);
     const response = await axios.post(
-      "http://localhost:4000/api/annuncio/modifica-annuncio",
+      `${API_BASE}/api/annuncio/modifica-annuncio`,
       formData,
       {
         headers: {

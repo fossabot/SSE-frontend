@@ -6,5 +6,5 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - REACT_APP_BACKEND_URL=https://sse-backend-1e76.onrender.com
+      - REACT_APP_BACKEND_URL=${REACT_APP_BACKEND_URL}
 

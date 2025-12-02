@@ -1,21 +1,134 @@
-<a name="readme-top"></a>
+# 🌱 Rently Frontend — SSE Version
 
+## 📌 Overview
 
-<!-- PROJECT LOGO -->
-<br />
-<div>
-  <a href="[https://github.com/othneildrew/Best-README-Template](https://github.com/rently-unisa)">
-    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEguIy57wfxwoIAjR_s3eVoc41osXimcFk6ODIyOtLox1acLPtKvHdC33RnoYdI3ksKht_I-Vz0cSwj1WDDyKIV5-U96ndYPzuv_VEeXzGfWu-xHuJ0kynrhVJJcgvuQFfYcwaIfFa8Sau6-ym3oE1f-5wNbfKSPPINtLPKA_s0qT88aCCySWdb9ulOkOewt" alt="Logo" width="80" height="80">
-  </a>
+This repository contains the **frontend of the Rently project**, originally developed by students of the Software Engineering course.
+We forked the original project (full credit to the authors: [https://github.com/rently-unisa/front-end](https://github.com/rently-unisa/front-end)) and extended it as part of the **Sustainable Software Engineering (SSE)** course.
 
+The objective of this work is to **evaluate and improve the environmental and performance sustainability** of the frontend using the tools introduced during the course.
 
+The repository includes three branches used during the analysis:
 
+```
+├─ baseline/            # version before sustainability evaluations
+├─ sse-improvements/    # version after sustainability enhancements
+└─ main                 # final integrated frontend
+```
 
+Experiment logs, tool outputs, and structured reports are stored under:
 
+```
+sse-reports/
+   ├─ baseline/
+   └─ sse-improvements/
+```
 
-<!-- ABOUT THE PROJECT -->
-## Rently
+Each directory contains:
 
-<p>Si vuole realizzare un sistema che mira a promuovere uno stile di vita più sostenibile, attraverso la condivisione di oggetti e il riutilizzo di risorse.
-L’obiettivo principale è ridurre l’impatto ambientale delle attività quotidiane sul pianeta, tramite la creazione di una piattaforma digitale che faciliti la condivisione ed il noleggio di oggetti inutilizzati.
-Il sistema consente di prendere in prestito oggetti resi disponibili mediante annunci, promuovendo così la riduzione della necessità di creare nuovi oggetti e di conseguenza gli sprechi di produzione.</p>
+* Raw tool results
+* Screenshots
+* Analysis notes
+
+---
+
+## 🌍 Sustainability Tools
+
+As part of the SSE course activities, the frontend was evaluated using the tools presented during the laboratory sessions.
+Each tool contributes to a different dimension of software sustainability.
+
+---
+
+### 🌐 **WebsiteCarbon**
+
+WebsiteCarbon estimates the environmental impact of a public web page.
+It provides metrics such as:
+
+* CO₂ emitted per page view
+* Estimated yearly emissions
+* Grade (A+–F)
+* Green hosting classification
+* Comparison with other tested sites
+
+In this project, WebsiteCarbon was used to evaluate the deployed version of the frontend hosted via GitHub Pages.
+
+---
+
+### 🍃 **EcoIndex**
+
+EcoIndex analyzes web pages by estimating their environmental footprint based on:
+
+* DOM complexity
+* Number of HTTP requests
+* Total page weight
+
+EcoIndex generates indicators such as:
+
+* EcoIndex score (0–100)
+* Grade (A–G)
+* Water consumption
+* Greenhouse gas emissions
+
+The tool was applied to the deployed frontend entrypoint to evaluate its environmental sustainability.
+
+---
+
+### 🖼️ **GreenIT-Analysis**
+
+GreenIT-Analysis is a browser extension that evaluates the environmental impact and performance characteristics of individual web pages.
+For the frontend, it provides insights on:
+
+* DOM complexity
+* Media and image optimization
+* CSS/JS weight
+* Page loading impact
+* Recommendations for reducing resource usage
+
+Because the frontend is a Single Page Application (SPA), GreenIT-Analysis was also used to analyze different *logical views* of the application through forced reloads and navigation.
+
+---
+## 🐳 Running the Frontend with Docker
+
+### 1️⃣ Create a `.env` file
+
+The frontend uses only one environment variable:
+
+```
+REACT_APP_BACKEND_URL=http://localhost:4000
+```
+
+If not provided, the application defaults to:
+
+```
+http://localhost:4000
+```
+
+As defined in `api.js`:
+
+```js
+export const API_BASE =
+  process.env.REACT_APP_BACKEND_URL || "http://localhost:4000";
+```
+
+---
+
+### 2️⃣ Run the Frontend
+
+```bash
+docker compose up --build
+```
+
+This command starts:
+
+* `frontend` → React development server (port 3000)
+
+The application will be available at:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 👥 Credits
+
+Original frontend authors: [https://github.com/rently-unisa/front-end](https://github.com/rently-unisa/front-end)

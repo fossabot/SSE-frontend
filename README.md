@@ -1,4 +1,6 @@
 # 🌱 Rently Frontend — SSE Version
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fredyz13%2FSSE-frontend.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fredyz13%2FSSE-frontend?ref=badge_shield)
+
 
 ## 📌 Overview
 
@@ -132,3 +134,7 @@ http://localhost:3000
 ## 👥 Credits
 
 Original frontend authors: [https://github.com/rently-unisa/front-end](https://github.com/rently-unisa/front-end)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fredyz13%2FSSE-frontend.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fredyz13%2FSSE-frontend?ref=badge_large)
